@@ -294,7 +294,16 @@ namespace AC
 						{
 							if (isAssetFile)
 							{
-								externalParameters[i].SetValue (localParameters[i].intValue);
+								//externalParameters[i].SetValue (localParameters[i].intValue);
+
+								if (localParameters[i].gameObject != null)
+								{
+									externalParameters[i].SetValue (localParameters[i].gameObject);
+								}
+								else
+								{
+									externalParameters[i].SetValue (localParameters[i].intValue);
+								}
 							}
 							else if (localParameters[i].gameObject != null)
 							{
@@ -595,8 +604,30 @@ namespace AC
 						if (isAssetFile)
 						{
 							// ID
-							localParameters[i].intValue = EditorGUILayout.IntField (label + " (ID):", localParameters[i].intValue);
-							localParameters[i].gameObject = null;
+							//localParameters[i].intValue = EditorGUILayout.IntField (label + " (ID):", localParameters[i].intValue);
+							//localParameters[i].gameObject = null;
+
+							/*localParameters[i].gameObject = (GameObject) EditorGUILayout.ObjectField (label + " (If prefab):", localParameters[i].gameObject, typeof (GameObject), false);
+							if (localParameters[i].gameObject != null)
+							{
+								GUI.enabled = false;
+							}
+							localParameters[i].intValue = EditorGUILayout.IntField (label + " (ID #):", localParameters[i].intValue);
+							GUI.enabled = true;*/
+
+							localParameters[i].gameObject = (GameObject) EditorGUILayout.ObjectField (label + ":", localParameters[i].gameObject, typeof (GameObject), true);
+							if (localParameters[i].gameObject != null)
+							{
+								if (PrefabUtility.GetPrefabType (localParameters[i].gameObject) != PrefabType.Prefab)
+								{
+									localParameters[i].intValue = FieldToID (localParameters[i].gameObject, localParameters[i].intValue);
+									localParameters[i].gameObject = IDToField (localParameters[i].gameObject, localParameters[i].intValue, true);
+								}
+							}
+							else
+							{
+								localParameters[i].intValue = EditorGUILayout.IntField (label + " (ID #):", localParameters[i].intValue);
+							}
 						}
 						else
 						{

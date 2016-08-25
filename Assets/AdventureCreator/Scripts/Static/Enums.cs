@@ -210,7 +210,7 @@ namespace AC
 	public enum Hand { Left, Right };
 
 	public enum SelectInventoryDisplay { NoChange, ShowSelectedGraphic, ShowHoverGraphic, HideFromMenu };
-	public enum RotateSprite3D { CameraFacingDirection, RelativePositionToCamera };
+	public enum RotateSprite3D { CameraFacingDirection, RelativePositionToCamera, FullCameraRotation };
 	public enum ScreenWorld { ScreenSpace, WorldSpace };
 	public enum ShowDebugLogs { Always, OnlyWarningsOrErrors, Never };
 	public enum JournalType { NewJournal, DisplayExistingJournal };

@@ -110,7 +110,7 @@ namespace AC
 			}
 			else
 			{
-				if (pageNumber == numPages)
+				/*if (pageNumber == numPages)
 				{
 					GUI.enabled = false;
 				}
@@ -119,7 +119,25 @@ namespace AC
 					pageNumber ++;
 					Finish ();
 				}
-				GUI.enabled = true;
+				GUI.enabled = true;*/
+
+				if (pageNumber == numPages)
+				{
+					if (GUILayout.Button ("Close", EditorStyles.miniButtonRight))
+					{
+						NewGameWizardWindow window = (NewGameWizardWindow) EditorWindow.GetWindow (typeof (NewGameWizardWindow));
+						pageNumber = 0;
+						window.Close ();
+					}
+				}
+				else
+				{
+					if (GUILayout.Button ("Finish", EditorStyles.miniButtonRight))
+					{
+						pageNumber ++;
+						Finish ();
+					}
+				}
 			}
 			GUILayout.EndHorizontal ();
 
@@ -287,7 +305,7 @@ namespace AC
 						foreach (Menu demoMenu in demoMenuManager.menus)
 						{
 							Menu newMenu = ScriptableObject.CreateInstance <Menu>();
-							newMenu.Copy (demoMenu, true);
+							newMenu.Copy (demoMenu, true, true);
 							newMenu.Recalculate ();
 
 							if (wizardMenu == WizardMenu.DefaultAC)
@@ -307,7 +325,12 @@ namespace AC
 										AssetDatabase.ImportAsset (newCanvasPath);
 										newMenu.canvas = (Canvas) AssetDatabase.LoadAssetAtPath (newCanvasPath, typeof (Canvas));
 									}
+
+									newMenu.rectTransform = null;
 								}
+
+								//if (demoMenu.rectTransform != null && demoMenu.rectTransform.GetComponent <Co
+								//newMenu.rectTransform
 							}
 
 							newMenu.hideFlags = HideFlags.HideInHierarchy;
@@ -488,6 +511,17 @@ namespace AC
 			{
 				GUILayout.Label ("Please choose what interface you would like to start with. It can be changed at any time - this is just to help you get started.");
 				wizardMenu = (WizardMenu) EditorGUILayout.EnumPopup (wizardMenu);
+
+				if (wizardMenu == WizardMenu.DefaultAC || wizardMenu == WizardMenu.DefaultUnityUI)
+				{
+					MenuManager demoMenuManager = AssetDatabase.LoadAssetAtPath("Assets/AdventureCreator/Demo/Managers/Demo_MenuManager.asset", typeof(MenuManager)) as MenuManager;
+					CursorManager demoCursorManager = AssetDatabase.LoadAssetAtPath("Assets/AdventureCreator/Demo/Managers/Demo_CursorManager.asset", typeof(CursorManager)) as CursorManager;
+
+					if (demoMenuManager == null || demoCursorManager == null)
+					{
+						EditorGUILayout.HelpBox ("Unable to locate the Demo game's Manager assets in '/AdventureCreator/Demo/Managers'. These assets must be imported in order to start with the default interface.", MessageType.Warning);
+					}
+				}
 			}
 
 			else if (pageNumber == 5)

@@ -159,12 +159,15 @@ namespace AC
 				else if (cycleUIBasis == CycleUIBasis.Dropdown)
 				{
 					#if UNITY_5_3_OR_NEWER
-					parentMenu = _menu;
-					uiDropdown = LinkUIElement <Dropdown>();
-					uiDropdown.value = selected;
-					uiDropdown.onValueChanged.AddListener (delegate {
-         				uiDropdownValueChangedHandler (uiDropdown);
-     				});
+					if (uiDropdown != null)
+					{
+						parentMenu = _menu;
+						uiDropdown = LinkUIElement <Dropdown>();
+						uiDropdown.value = selected;
+						uiDropdown.onValueChanged.AddListener (delegate {
+	         				uiDropdownValueChangedHandler (uiDropdown);
+	     				});
+	     			}
      				#endif
 				}
 			}
@@ -502,6 +505,7 @@ namespace AC
 					}
 				}
 			}
+			base.RecalculateSize (source);
 		}
 		#endif
 

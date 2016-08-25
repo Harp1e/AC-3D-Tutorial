@@ -112,7 +112,14 @@ namespace AC
 
 			if (location == VariableLocation.Local && !isAssetFile)
 			{
-				return ProcessResult (CheckCondition (LocalVariables.GetVariable (variableID, localVariables), compareVar), actions);
+				GVar localVar = LocalVariables.GetVariable (variableID, localVariables);
+				if (localVar != null)
+				{
+					return ProcessResult (CheckCondition (localVar, compareVar), actions);
+				}
+
+				Debug.LogWarning ("The 'Variable: Check' Action halted the ActionList because it cannot find the Local Variable with an ID of " + variableID);
+				return GenerateStopActionEnd ();
 			}
 			else
 			{
@@ -122,6 +129,8 @@ namespace AC
 					var.Download ();
 					return ProcessResult (CheckCondition (var, compareVar), actions);
 				}
+
+				Debug.LogWarning ("The 'Variable: Check' Action halted the ActionList because it cannot find the Global Variable with an ID of " + variableID);
 				return GenerateStopActionEnd ();
 			}
 		}

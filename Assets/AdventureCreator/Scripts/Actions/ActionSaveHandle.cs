@@ -122,7 +122,7 @@ namespace AC
 					}
 					else
 					{
-						ACDebug.LogWarning ("Could not create profile - no variable found.");
+						ACDebug.LogWarning ("Could not get save slot index - no variable found.");
 						return 0f;
 					}
 				}

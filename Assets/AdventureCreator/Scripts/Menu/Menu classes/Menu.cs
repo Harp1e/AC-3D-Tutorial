@@ -221,19 +221,20 @@ namespace AC
 		 * <summary>Copies the variables of another Menu onto itself.</summary>
 		 * <param name = "fromEditor">If True, the duplication was done within the Menu Manager and not as part of the gameplay initialisation.</param>
 		 * <param name = "_menu">The Menu to copy from</param>
+		 * <param name = "forceUIFields">If True, the variables related to Unity UI-sourced Menus will also be copied, regardless of the Menu's menuSource value</param>
 		 */
-		public void Copy (AC.Menu _menu, bool fromEditor)
+		public void Copy (AC.Menu _menu, bool fromEditor, bool forceUIFields = false)
 		{
 			menuSource = _menu.menuSource;
-			if (menuSource == MenuSource.UnityUiPrefab || menuSource == MenuSource.UnityUiInScene)
+			if (forceUIFields || menuSource == MenuSource.UnityUiPrefab || menuSource == MenuSource.UnityUiInScene)
 			{
 				canvas = _menu.canvas;
 				canvasID = _menu.canvasID;
 				rectTransform = _menu.rectTransform;
 				rectTransformID = _menu.rectTransformID;
-				uiTransitionType = _menu.uiTransitionType;
-				uiPositionType = _menu.uiPositionType;
 			}
+			uiTransitionType = _menu.uiTransitionType;
+			uiPositionType = _menu.uiPositionType;
 
 			isEditing = false;
 			id = _menu.id;

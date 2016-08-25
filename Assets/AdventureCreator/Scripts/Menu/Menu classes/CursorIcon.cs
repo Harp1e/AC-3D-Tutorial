@@ -358,7 +358,7 @@ namespace AC
 		 * <summary>Gets a slice of the texture that represents the current frame, if the texture consists of animated frames.</summary>
 		 * <returns>A frame of animation</returns>
 		 */
-		public Texture2D GetAnimatedTexture ()
+		public Texture2D GetAnimatedTexture (bool canAnimate = true)
 		{
 			if (texture == null)
 			{
@@ -367,13 +367,12 @@ namespace AC
 			
 			if (isAnimated)
 			{
-				Rect animatedRect = GetAnimatedRect ();
-				
+				Rect animatedRect = GetAnimatedRect ((canAnimate) ? -1 : 0);
 				int x = Mathf.FloorToInt (animatedRect.x * texture.width);
 				int y = Mathf.FloorToInt (animatedRect.y * texture.height);
 				int width = Mathf.FloorToInt (animatedRect.width * texture.width);
 				int height = Mathf.FloorToInt (animatedRect.height * texture.height);
-				
+
 				if (animatedRect.width >= 0f && animatedRect.height >= 0f)
 				{
 					try
@@ -458,7 +457,7 @@ namespace AC
 				}
 				if (textures[i] == null)
 				{
-					textures[i] = GetAnimatedTexture ();
+					textures[i] = GetAnimatedTexture (canAnimate);
 				}
 				GUI.DrawTexture (_rect, textures[i]);
 				return textures[i];
@@ -539,6 +538,11 @@ namespace AC
 		 */
 		public Rect GetAnimatedRect (int _frameIndex)
 		{
+			if (_frameIndex < 0)
+			{
+				return GetAnimatedRect ();
+			}
+
 			int frameInRow = _frameIndex + 1;
 			int currentRow = 1;
 			while (frameInRow > numCols)

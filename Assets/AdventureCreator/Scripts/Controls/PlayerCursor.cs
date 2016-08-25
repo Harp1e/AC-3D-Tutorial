@@ -685,9 +685,10 @@ namespace AC
 				
 				if (KickStarter.cursorManager.cursorRendering == CursorRendering.Hardware)
 				{
-					if (icon.isAnimated && canAnimate)
+					if (icon.isAnimated)
 					{
-						Texture2D animTex = icon.GetAnimatedTexture ();
+						Texture2D animTex = icon.GetAnimatedTexture (canAnimate);
+
 						if (icon.GetName () != lastCursorName)
 						{
 							lastCursorName = icon.GetName ();

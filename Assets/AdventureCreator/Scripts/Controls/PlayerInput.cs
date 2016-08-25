@@ -742,7 +742,7 @@ namespace AC
 		{
 			return mousePosition;
 		}
-		
+
 
 		/**
 		 * <summary>Gets the y-inverted cursor position. This is useful because Menu Rects are drawn upwards, while screen space is measured downwards.</summary>

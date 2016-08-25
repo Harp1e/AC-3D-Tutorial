@@ -2310,9 +2310,13 @@ namespace AC
 					Vector3 relative = (transform.position - KickStarter.mainCamera.transform.position).normalized;
 					spriteChild.forward = relative;
 				}
-				else
+				else if (rotateSprite3D == RotateSprite3D.CameraFacingDirection)
 				{
 					spriteChild.rotation = Quaternion.Euler (spriteChild.rotation.eulerAngles.x, KickStarter.mainCamera.transform.rotation.eulerAngles.y, spriteChild.rotation.eulerAngles.z);
+				}
+				else if (rotateSprite3D == RotateSprite3D.FullCameraRotation)
+				{
+					spriteChild.rotation = Quaternion.Euler (KickStarter.mainCamera.transform.rotation.eulerAngles.x, KickStarter.mainCamera.transform.rotation.eulerAngles.y, KickStarter.mainCamera.transform.rotation.eulerAngles.z);
 				}
 			}
 			
