@@ -1,0 +1,262 @@
+lipsync version 1
+Brain audio - complete.wav
+24
+984
+1
+	Brain
+	Phew! Thanks.|Hellooo?|I'm ready to be freed now!|Don't forget to let me out!|Oh man, am I glad to see you.|Be a pal, and use that panel to turn this thing off.|Everyone's a comic.|Get me outta here!|I'm still waiting!|Yeah, I'm fine now!|Hey, a little help please . . .
+	11
+		Phew! Thanks.
+		21
+		47
+		2
+			Phew! 21 30 3
+				21 FV
+				24 etc
+				28 U
+			Thanks. 31 47 5
+				31 etc
+				34 AI
+				38 etc
+				41 etc
+				45 etc
+		Hellooo?
+		76
+		92
+		1
+			Hellooo? 76 79 0
+		I'm ready to be freed now!
+		127
+		164
+		6
+			I'm 127 130 2
+				127 AI
+				129 MBP
+			ready 132 140 4
+				132 etc
+				134 E
+				137 etc
+				139 E
+			to 141 145 2
+				141 etc
+				144 U
+			be 146 149 2
+				146 MBP
+				148 E
+			freed 151 159 4
+				151 FV
+				153 etc
+				156 E
+				158 etc
+			now! 160 164 2
+				160 etc
+				163 O
+		Don't forget to let me out!
+		202
+		242
+		6
+			Don't 202 209 4
+				202 etc
+				204 O
+				206 etc
+				208 etc
+			forget 211 221 5
+				211 FV
+				213 E
+				215 etc
+				218 E
+				220 etc
+			to 222 226 2
+				222 etc
+				225 U
+			let 227 233 3
+				227 L
+				229 E
+				232 etc
+			me 234 237 2
+				234 MBP
+				236 E
+			out! 238 242 2
+				238 O
+				241 etc
+		Oh man, am I glad to see you.
+		271
+		317
+		8
+			Oh 271 273 1
+				271 O
+			man, 274 281 3
+				274 MBP
+				277 AI
+				279 etc
+			am 282 287 2
+				282 AI
+				285 MBP
+			I 288 290 1
+				288 AI
+			glad 291 301 4
+				291 etc
+				294 L
+				297 AI
+				299 etc
+			to 302 306 2
+				302 etc
+				305 U
+			see 307 312 2
+				307 etc
+				310 E
+			you. 313 317 2
+				313 etc
+				316 U
+		Be a pal, and use that panel to turn this thing off.
+		446
+		514
+		12
+			Be 446 448 2
+				446 MBP
+				448 E
+			a 449 450 1
+				449 AI
+			pal, 452 457 3
+				452 MBP
+				454 AI
+				456 L
+			and 459 463 3
+				459 AI
+				461 etc
+				462 etc
+			use 465 469 3
+				465 etc
+				467 U
+				468 etc
+			that 471 476 3
+				471 etc
+				473 AI
+				475 etc
+			panel 477 486 5
+				477 MBP
+				479 AI
+				481 etc
+				483 AI
+				485 L
+			to 488 491 2
+				488 etc
+				490 U
+			turn 492 497 3
+				492 etc
+				494 E
+				496 etc
+			this 498 503 3
+				498 etc
+				500 AI
+				502 etc
+			thing 505 510 3
+				505 etc
+				507 AI
+				509 etc
+			off. 511 514 2
+				511 O
+				513 FV
+		Everyone's a comic.
+		557
+		592
+		3
+			Everyone's 557 577 8
+				557 E
+				560 FV
+				562 etc
+				565 E
+				568 WQ
+				570 AI
+				573 etc
+				575 etc
+			a 578 579 1
+				578 AI
+			comic. 580 592 5
+				580 etc
+				583 AI
+				585 MBP
+				588 AI
+				590 etc
+		Get me outta here!
+		628
+		669
+		4
+			Get 628 639 3
+				628 etc
+				632 E
+				636 etc
+			me 640 646 2
+				640 MBP
+				644 E
+			outta 647 658 3
+				647 U
+				651 etc
+				655 AI
+			here! 659 669 3
+				659 etc
+				663 AI
+				666 etc
+		I'm still waiting!
+		704
+		737
+		3
+			I'm 704 708 2
+				704 AI
+				707 MBP
+			still 710 721 4
+				710 etc
+				713 etc
+				716 AI
+				719 L
+			waiting! 723 737 5
+				723 WQ
+				726 E
+				729 etc
+				732 AI
+				735 etc
+		Yeah, I'm fine now!
+		778
+		820
+		4
+			Yeah, 778 787 2
+				778 etc
+				783 AI
+			I'm 788 796 2
+				788 AI
+				793 MBP
+			fine 797 811 3
+				797 FV
+				802 AI
+				807 etc
+			now! 812 820 2
+				812 etc
+				817 O
+		Hey, a little help please . . .
+		903
+		952
+		8
+			Hey, 903 905 2
+				903 etc
+				905 E
+			a 906 907 1
+				906 AI
+			little 908 916 5
+				908 L
+				910 AI
+				912 etc
+				913 AI
+				915 L
+			help 917 923 4
+				917 etc
+				919 E
+				921 L
+				922 MBP
+			please 924 930 4
+				924 MBP
+				926 L
+				928 E
+				929 etc
+			. 932 934 0
+			. 936 938 0
+			. 940 943 0
